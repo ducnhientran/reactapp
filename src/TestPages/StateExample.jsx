@@ -10,6 +10,7 @@ class StateExample extends Component{
     }
 
     toggleDisplayBio(){  
+
         this.setState({displayBio: !this.state.displayBio});  
     }  
 

@@ -8,8 +8,6 @@ import PropsExample from './TestPages/PropsExample';
 import ConstructorExample from './TestPages/ConstructorExample';
 import ComponentLifeCycle from './TestPages/ComponentLifeCycle';
 import ReactList from './TestPages/ReactList';
-
-
 import './App.css';
 
 class App extends Component{

@@ -1,5 +1,6 @@
 {
   "name": "app1",
+  "homepage": "/reactapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +12,6 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
     "redux": "^4.0.5"
   },
   "scripts": {
@@ -46,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/ducnhientran/reactapp/issues"
   },
-  "homepage": "https://github.com/ducnhientran/reactapp#readme"
+  
+  "devDependencies": {
+    "react-scripts": "1.0.8"
+  }
 }
