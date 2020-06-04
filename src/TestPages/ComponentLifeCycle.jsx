@@ -48,13 +48,11 @@ class Content extends Component {
     render(){
 
         return (
-               <div>
-                   <h3>{this.props.header}</h3>
-                   <h4>{this.props.content}</h4>
-               </div> 
+            <div>
+                  <h3>{this.props.header}</h3>
+                  <h4>{this.props.content}</h4>
+            </div> 
         );
     }
 }
-
-
 export default ComponentLifeCycle;
