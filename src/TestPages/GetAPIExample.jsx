@@ -4,6 +4,7 @@ import axios from 'axios';
 import GetAPI from '../Utils/GetAPI';
 import Button from '@material-ui/core/Button';
 import DialogExample from './DialogExample';
+import CustomizedDialogs from './CustomizedDialogs';
 
 
 class GetAPIExample extends Component {
@@ -31,20 +32,8 @@ class GetAPIExample extends Component {
         );
       }
 
-     successCallback(result) {
-      this.setState({ result});
-    }
-
-      // handleClickOpen = () => {
-      //   this.setState= {
-      //     openFlag : true
-      //   }
-      // };
-
-      componentWillMount(){
-        this.setState= {
-          openFlag : true
-        }
+      handleClickOpen(){
+        console.log("Open dialog");
       }
 
       
@@ -52,10 +41,7 @@ class GetAPIExample extends Component {
         return (
             <div>
                 <h1>GET API Example</h1> 
-                <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
-                  Open dialog
-                </Button>
-                <DialogExample openFlag = {this.state.openFlag}/>
+                  <CustomizedDialogs/>
                 <ul>
                     { this.state.jobs.map(job => <li>{job.title}</li>)}
                 </ul>

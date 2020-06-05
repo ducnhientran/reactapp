@@ -17,20 +17,25 @@ class DialogExample extends Component {
     constructor(){
         super();
         this.state = {
-            open : false
-
+            open : true
         }
     }
 
     handleClose = () => {
-        this.props.openFlag = false;
+        console.log("Save Change Click");
+
+        this.setState({
+            open:false
+        });
     };
+
+
 
     render() {
         return (
             <div>
            
-                <Dialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.props.openFlag}>
+                <Dialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
                     <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
                         Modal title
                     </DialogTitle>
