@@ -10,6 +10,7 @@ import ComponentLifeCycle from './TestPages/ComponentLifeCycle';
 import ReactList from './TestPages/ReactList';
 import WithRouterExample from './TestPages/WithRouterExample';
 import GetAPIExample from './TestPages/GetAPIExample';
+import Tree from './TestPages/Tree';
 import './App.css';
 
 class App extends Component{
@@ -31,6 +32,7 @@ class App extends Component{
                 <li><Link to="/reactlist_ex"                        className="FormField__Link">React List Example</Link></li>
                 <li><Link to="/withrouter_ex/:id/:action"           className="FormField__Link">With Router Example (/withrouter_ex/:id/:action)</Link></li>
                 <li><Link to="/getapi_ex/"                          className="FormField__Link">Get API example</Link></li>
+                <li><Link to="/tree_ex/"                             className="FormField__Link">Tree example</Link></li>
                 
               </ul>       
             </div>
@@ -42,6 +44,7 @@ class App extends Component{
              <Route path="/reactlist_ex"                            component={ReactList}></Route>
              <Route path="/withrouter_ex/:id/:action"               component={WithRouterExample}></Route>
              <Route path="/getapi_ex/"                              component={GetAPIExample}></Route>
+             <Route path="/tree_ex/"                                component={Tree}></Route>
              
           </div>
           <div className="App__Form">

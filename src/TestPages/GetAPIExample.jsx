@@ -7,6 +7,9 @@ import DialogExample from './DialogExample';
 import CustomizedDialogs from './dialog/CustomizedDialogs';
 
 
+
+
+
 class GetAPIExample extends Component {
 
     constructor(props){
@@ -19,10 +22,8 @@ class GetAPIExample extends Component {
 
         }
         this.handleData = this.handleData.bind(this);
-      
     }
 
-    //componentWillMount(){
     componentDidMount() {
         // axios.get("http://api.dataatwork.org/v1/jobs")
         //   .then(res => {
@@ -37,43 +38,40 @@ class GetAPIExample extends Component {
     }
 
     componentDidUpdate(){
-        console.log("component did update");            
+        console.log("component did update");   
+    }
+
+    componentWillUpdate(){
+        console.log("component will update");   
     }
 
     handleClickOpen = () =>{
-            this.setState({ 
-                openFlag: !this.state.openFlag,
-            });
-            
+        this.setState({ 
+            openFlag: !this.state.openFlag,
+        });
     }
       
     handleData(data) {
-
-        console.log("handleData : " + data);
+        console.log("handleData parent : " + data);
         this.setState({
           fromChild: data
         });
-      }
+    }
 
-  
-  
     render (){
+        console.log("Render() run");
         return (
             <div>
-              
                 <h1>GET API Example</h1>
                     <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>Open dialog</Button>
                     <DialogExample open = {this.state.openFlag} handleClose={this.handleClickOpen}  handlerFromParant={this.handleData} />
-
                     <h5>Received by parent:<br />{this.state.fromChild}</h5>
-
-                <ul>
-                    { this.state.jobs.map(job => <li>{job.title}</li>)}
-                </ul>
+                    <ul>
+                        {this.state.jobs.map(job => <li>{job.title}</li>)}
+                    </ul>
             </div>
         );
     }
-
 }
 
 export default GetAPIExample;

@@ -18,29 +18,28 @@ class DialogExample extends Component {
     constructor() {
         super();
         this.handleChange = this.handleChange.bind(this);
-        this.submitHandler = this.submitHandler.bind(this);
+        //this.submitHandler = this.submitHandler.bind(this);
         this.state = {
           inputField: ''
         };
     }
 
-    submitHandler(evt) {
-        evt.preventDefault();
-        this.props.handlerFromParant(this.state.inputField);
-        
+    handleChange(event) {
         this.setState({
-          inputField: ''
-        });
-      }
-      
-      handleChange(event) {
-        this.setState({
-          inputField: event.target.value
-        });
-      }
+            inputField: event.target.value
+        }, ()=>{this.props.handlerFromParant(this.state.inputField)});
+        console.log("handleChange child == " + event.target.value);
+        //this.props.handlerFromParant(this.state.inputField);
+    }
 
+    // handleChange(event) {
+    //     this.setState((prevState,props)=>{
+    //         return ({inputField : event.target.value});
+    //     }, ()=>{this.props.handlerFromParant(this.state.inputField)});
+    //     console.log("handleChange child == " + event.target.value);
+    // }
 
-
+   
     render() {
         return (
             <div>
@@ -50,7 +49,7 @@ class DialogExample extends Component {
                             Modal title
                         </DialogTitle>
                         <DialogContent dividers>
-                            <input type="text" value={this.state.inputField}     onChange={this.handleChange} /> />
+                            <input type="text" value={this.state.inputField}     onChange={this.handleChange} />
                             <Typography gutterBottom>
                             Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
                             in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
@@ -66,9 +65,9 @@ class DialogExample extends Component {
                             </Typography>
                         </DialogContent>
                         <DialogActions>
-                                <Button autoFocus onClick={this.props.handleClose} type="submit"  color="primary">
+                            <Button autoFocus onClick={this.props.handleClose} color="primary">
                                 Save changes
-                                 </Button>
+                            </Button>
                         </DialogActions>
                     </Dialog>
                 </form>
