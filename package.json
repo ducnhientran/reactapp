@@ -1,6 +1,6 @@
 {
   "name": "app1",
-  "homepage": "/reactapp",
+  "homepage": "http:///reactapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

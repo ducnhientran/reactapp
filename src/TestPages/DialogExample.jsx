@@ -67,8 +67,8 @@ class DialogExample extends Component {
                         </DialogContent>
                         <DialogActions>
                                 <Button autoFocus onClick={this.props.handleClose} type="submit"  color="primary">
-                                Save changes
-                                 </Button>
+                                 Save changes
+                                </Button>
                         </DialogActions>
                     </Dialog>
                 </form>
